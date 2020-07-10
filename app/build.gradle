@@ -1,0 +1,160 @@
+apply plugin: 'com.android.application'
+//apply plugin: 'com.getkeepsafe.dexcount'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+
+    defaultConfig {
+        applicationId "com.panaceasoft.psbuyandsell"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 21
+        versionName "2.7"
+        multiDexEnabled true
+    }
+    // 2.7 = 21
+    // 2.6 = 20
+    // 2.5 = 19
+    // 2.5 = 18
+    // 2.4 = 17
+    // 2.3 = 16
+    // 2.3 = 15
+    // 2.2 = 14
+    // 2.1 = 13
+    // 2.0 = 12
+    // 1.9 = 11
+    // 1.8 = 10
+    // 1.7 = 9
+    // 1.6 = 8
+    // 1.5 = 7
+    // 1.4 = 6
+    // 1.3 = 5
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // Google Support Lib
+    implementation "androidx.appcompat:appcompat:1.3.0-alpha01"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.2.0-alpha03"
+    implementation "com.google.android.material:material:1.2.0-alpha06"
+    implementation "androidx.palette:palette:1.0.0"
+    implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    implementation "androidx.browser:browser:1.2.0"
+
+    // Constraint Layout
+    implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta6"
+
+    //google login
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+
+    // Google GMS
+    implementation "com.google.android.gms:play-services-maps:17.0.0"
+    implementation "com.google.android.gms:play-services-gcm:17.0.0"
+    implementation "com.google.android.gms:play-services-ads:19.1.0"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:17.4.1"
+    implementation "com.google.firebase:firebase-messaging:20.1.7"
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.1'
+    implementation 'com.google.firebase:firebase-database:19.3.0'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation "com.google.android.gms:play-services-gcm:17.0.0"
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger:2.24"
+    implementation "com.google.dagger:dagger-android-support:2.24"
+    annotationProcessor "com.google.dagger:dagger-android-processor:2.24"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.24"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+
+    // Lifecycle Arch
+    implementation "androidx.lifecycle:lifecycle-runtime:2.3.0-alpha03"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.3.0-alpha03"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:2.3.0-alpha03"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:4.10.0"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+
+    // Room
+    implementation "androidx.room:room-runtime:2.2.5"
+    annotationProcessor "androidx.room:room-compiler:2.2.5"
+
+    // AsyncHttp
+    implementation 'com.loopj.android:android-async-http:1.4.9'
+
+//    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+//    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+
+    //fblogin
+//    implementation 'com.facebook.android:facebook-android-sdk:4.0.0'
+    implementation 'com.facebook.android:facebook-login:5.5.1'
+
+    //AppBarScroll
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
+
+    //FlexBoxLayout
+    //Please use 1.0.0 if you haven't migrated to AndroidX.
+    implementation 'com.google.android:flexbox:1.1.0'
+
+    //MultiDex
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    //BrainTree
+//    implementation 'com.braintreepayments.api:braintree:2.20.1'
+//    implementation 'com.braintreepayments.api:drop-in:3.7.1'
+
+    //heart animation
+    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+    implementation 'com.mikepenz:iconics-core:2.9.1@aar'
+    implementation 'com.mikepenz:community-material-typeface:1.3.41.1@aar'
+
+    //Stripe Payment
+//    implementation 'com.stripe:stripe-android:8.3.0'
+
+    //GDPR
+    implementation 'com.google.android.ads.consent:consent-library:1.0.8'
+
+    //firebase phone verification
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+
+    //Stripe Payment
+    implementation 'com.stripe:stripe-android:8.3.0'
+
+    //BrainTree
+    implementation 'com.braintreepayments.api:drop-in:3.7.1'
+
+}
